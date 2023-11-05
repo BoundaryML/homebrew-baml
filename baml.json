@@ -1,0 +1,15 @@
+{
+  "version": "0.1.0",
+  "homepage": "https://trygloo.com",
+  "url": "https://github.com/GlooHQ/homebrew-baml/releases/download/v0.1.0/baml.exe",
+  "bin": "baml.exe",
+  "hash": "bebc4aa7930067db2e1d97c28fa1a76b6fd3a6d09e1943a22b42fb1713bc96ec",
+  "checkver": "github",
+  "autoupdate": {
+    "architecture": {
+      "64bit": {
+        "url": "https://github.com/GlooHQ/homebrew-baml/releases/download/v$version/baml.exe"
+      }
+    }
+  }
+}
