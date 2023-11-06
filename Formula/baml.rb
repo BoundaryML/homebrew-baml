@@ -1,4 +1,4 @@
-class Gloo < Formula
+class Baml < Formula
   desc "BAML Utilities" 
   homepage "https://www.trygloo.com"
   version "0.1.1"
