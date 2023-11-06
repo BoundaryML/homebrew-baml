@@ -9,7 +9,7 @@ RED=$(tput setaf 1)
 RESET=$(tput sgr0)
 
 # Define the URL of the tar.gz file
-URL="https://github.com/GlooHQ/homebrew-baml/releases/download/v0.1.0/baml-linux-x86_64.tar.gz"
+URL="https://github.com/GlooHQ/homebrew-baml/releases/download/v0.1.1/baml-linux-x86_64.tar.gz"
 BINARY_NAME="baml"
 LOG_FILE="install_log.txt"
 
