@@ -5,11 +5,11 @@ class Baml < Formula
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/GlooHQ/homebrew-baml/releases/download/v0.1.1/baml-apple-intel.tar.gz"
-      sha256 "80d8fa6f074053cac1acea80bf3148e8331f52356b98061e02e6899c19faf15a"
+      url "https://github.com/GlooHQ/baml/releases/download/unstable%2Fcli%2Fv0.1.1/baml-apple-intel.tar.gz"
+      sha256 "095c2af731624bc22a0c843de27ffc891d4930c62b7df35e0f95deec483c0634"
     elsif Hardware::CPU.arm?
-      url "https://github.com/GlooHQ/homebrew-baml/releases/download/v0.1.1/baml-apple-arm.tar.gz"
-      sha256 "e7ba9782c3f28336340b7b945554b26ccfe2d8ef0fd956136a6d3d3482319e03"
+      url "https://github.com/GlooHQ/baml/releases/download/unstable%2Fcli%2Fv0.1.1/baml-apple-arm.tar.gz"
+      sha256 "b77619efc5b1fe410dd2f685c9789454af938b1c50d8de4cbed13a8f692c550b"
     end
   end
 
