@@ -19,7 +19,15 @@ jobs:
 
       - name: Update formula
         run: |
-          python3 version_bump.py --version ${{ github.event.client_payload.version }} --hash-linux ${{ github.event.client_payload.hash_linux }} --hash-mac-intel  ${{ github.event.client_payload.hash_mac_intel }} --hash-mac-arm ${{ github.event.client_payload.hash_mac_arm }} --hash-windows ${{ github.event.client_payload.hash_windows }} ${{ github.event.client_payload.nightly && '--nightly' || '' }}
+          if [ -n "${{ github.event.client_payload.version }}" ]; then
+            python3 version_bump.py --version ${{ github.event.client_payload.version }} --hash-linux ${{ github.event.client_payload.hash_linux }} --hash-mac-intel  ${{ github.event.client_payload.hash_mac_intel }} --hash-mac-arm ${{ github.event.client_payload.hash_mac_arm }} --hash-windows ${{ github.event.client_payload.hash_windows }} ${{ github.event.client_payload.nightly && '--nightly' || '' }}
+          fi
+
+      - name: Client update
+        run: |
+          if [ -n "${{ github.event.client_payload.py_client_version }}" ]; then
+            python3 version_bump.py --py-client-version ${{ github.event.client_payload.py_client_version }} ${{ github.event.client_payload.py_client_nightly && '--py-client-nightly' || '' }}
+          fi
 
       - uses: EndBug/add-and-commit@v9
         with:
