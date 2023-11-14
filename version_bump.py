@@ -19,7 +19,11 @@ class Args:
     
     @property
     def url(self) -> str:
-        return f"https://github.com/GlooHQ/baml/releases/download/{'unstable' if self.nightly else 'stable'}%2Fcli%2Fv{self.url_version}"
+        if self.nightly:
+            return f"https://github.com/GlooHQ/baml/releases/download/unstable%2Fcli%2Fv{self.url_version}"
+        else:
+            return f"https://github.com/GlooHQ/baml/releases/download/releases%2Fbaml-cli%2Fv{self.url_version}"
+
 
 
 def update_scoop(arguments: Args) -> None:
@@ -43,7 +47,7 @@ def update_install_sh(arguments: Args) -> None:
     path = Path("install-baml.sh")
     content = path.read_text()
     content = re.sub(r'(?<=VERSION=").*?(?=")', arguments.version, content, count=1)
-    content = content.replace("# ADD CHECKSUMS HERE", f"CHECKSUMS[{arguments.version}]=( \"{arguments.hash_linux}\" \"{arguments.hash_mac_intel}\" \"{arguments.hash_mac_arm}\" )\n# ADD CHECKSUMS HERE", 1)
+    content = content.replace("# ADD CHECKSUMS HERE", f"CHECKSUMS[\"{arguments.version}\"]=( \"{arguments.hash_linux}\" \"{arguments.hash_mac_intel}\" \"{arguments.hash_mac_arm}\" )\n# ADD CHECKSUMS HERE", 1)
     content = content.replace("# ADD VERSIONS HERE", f"\"{arguments.version}\"\n# ADD VERSIONS HERE", 1)
     path.write_text(content)
 
@@ -79,7 +83,7 @@ def update_version(arguments: Args) -> None:
         data = json.load(f)
     
     if arguments.version and not arguments.nightly:
-        data["version"] = arguments.version
+        data["cli"] = arguments.version
     
     if arguments.py_client_version and not arguments.py_client_nightly:
         data["py_client"] = arguments.py_client_version

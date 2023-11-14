@@ -9,12 +9,12 @@ RED=$(tput setaf 1)
 RESET=$(tput sgr0)
 
 # Default settings
-RELEASE_TYPE="stable" # Default release type
+RELEASE_TYPE="releases%2Fbaml-cli%2F" # Default release type
 VERSION="0.1.1"
 
 # Define checksums for each version (update this list as new versions are released)
 declare -A CHECKSUMS
-CHECKSUMS[0.1.1]=( "c0923d34630bfbfdc2509f561bc5dd99c298bbddb66eed0dd5564879a7b477fb" "68fbffc4da1168abd4c417b22b16240e658d2b1416bb39aebaf2b8c0b1350811" "ca3c3c1416f962b590e8d3ef551a01beebd8fd419c66d50752f8a97cc0ee5c76" )
+CHECKSUMS["0.1.1"]=( "c0923d34630bfbfdc2509f561bc5dd99c298bbddb66eed0dd5564879a7b477fb" "68fbffc4da1168abd4c417b22b16240e658d2b1416bb39aebaf2b8c0b1350811" "ca3c3c1416f962b590e8d3ef551a01beebd8fd419c66d50752f8a97cc0ee5c76" )
 # ADD CHECKSUMS HERE
 
 BINARY_NAME="baml"
@@ -58,7 +58,7 @@ get_latest_version() {
 while [ "$#" -gt 0 ]; do
     case "$1" in
         --nightly)
-        RELEASE_TYPE="unstable"
+        RELEASE_TYPE="unstable%2Fcli%2F"
         shift
         ;;
         --version=*)
@@ -91,9 +91,9 @@ while [ "$#" -gt 0 ]; do
 done
 
 # Construct download URLs based on release type and version
-URL_LINUX="https://github.com/GlooHQ/baml/releases/download/${RELEASE_TYPE}%2Fcli%2Fv${VERSION}/baml-linux-x86_64.tar.gz"
-URL_MAC_INTEL="https://github.com/GlooHQ/baml/releases/download/${RELEASE_TYPE}%2Fcli%2Fv${VERSION}/baml-apple-intel.tar.gz"
-URL_MAC_ARM="https://github.com/GlooHQ/baml/releases/download/${RELEASE_TYPE}%2Fcli%2Fv${VERSION}/baml-apple-arm.tar.gz"
+URL_LINUX="https://github.com/GlooHQ/baml/releases/download/${RELEASE_TYPE}v${VERSION}/baml-linux-x86_64.tar.gz"
+URL_MAC_INTEL="https://github.com/GlooHQ/baml/releases/download/${RELEASE_TYPE}v${VERSION}/baml-apple-intel.tar.gz"
+URL_MAC_ARM="https://github.com/GlooHQ/baml/releases/download/${RELEASE_TYPE}v${VERSION}/baml-apple-arm.tar.gz"
 
 # Detect operating system and set the appropriate URL
 OS=$(uname -s)
