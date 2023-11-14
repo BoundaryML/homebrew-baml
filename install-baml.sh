@@ -10,10 +10,11 @@ RESET=$(tput sgr0)
 
 # Default settings
 RELEASE_TYPE="stable" # Default release type
-VERSION="0.1.0"
+VERSION="0.1.1"
 
 # Define checksums for each version (update this list as new versions are released)
 declare -A CHECKSUMS
+CHECKSUMS[0.1.1]=( "c0923d34630bfbfdc2509f561bc5dd99c298bbddb66eed0dd5564879a7b477fb" "68fbffc4da1168abd4c417b22b16240e658d2b1416bb39aebaf2b8c0b1350811" "ca3c3c1416f962b590e8d3ef551a01beebd8fd419c66d50752f8a97cc0ee5c76" )
 # ADD CHECKSUMS HERE
 
 BINARY_NAME="baml"
@@ -21,7 +22,8 @@ LOG_FILE="install_log.txt"
 
 # List of possible versions (update this list as new versions are released)
 POSSIBLE_VERSIONS=(
-    # ADD VERSIONS HERE
+    "0.1.1"
+# ADD VERSIONS HERE
 )
 
 # Function to log messages
