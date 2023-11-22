@@ -1,5 +1,5 @@
 
-class Baml < Formula
+class BamlNightly < Formula
   desc "BAML Utilities" 
   homepage "https://www.trygloo.com"
   version "0.2.1-canary.1"

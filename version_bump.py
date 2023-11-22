@@ -53,8 +53,9 @@ def update_install_sh(arguments: Args) -> None:
 
 def update_brew(arguments: Args) -> None:
     path = Path("Formula/baml-nightly.rb" if arguments.nightly else "Formula/baml.rb")
+    name = "BamlNightly" if arguments.nightly else "Baml"
     rule = f"""
-class Baml < Formula
+class {name} < Formula
   desc "BAML Utilities" 
   homepage "https://www.trygloo.com"
   version "{arguments.version}"
