@@ -1,14 +1,14 @@
 {
-    "version": "0.4.0-canary.8",
+    "version": "0.5.0-canary.0",
     "homepage": "https://trygloo.com",
-    "url": "https://github.com/GlooHQ/baml/releases/download/unstable%2Fcli%2Fv0.4.0/baml.exe",
+    "url": "https://github.com/GlooHQ/baml/releases/download/unstable%2Fcli%2Fv0.5.0/baml.exe",
     "bin": "baml.exe",
-    "hash": "156fe7e5b76fe8d1d052e3f4ee61c9b674b5297644729b95bde14017c89bfc8d",
+    "hash": "842d075cd5298b380c30e11690a1292c5870bb8be9ec8257c50b9205cbbbea1a",
     "checkver": "github",
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://github.com/GlooHQ/baml/releases/download/unstable%2Fcli%2Fv0.4.0/baml.exe"
+                "url": "https://github.com/GlooHQ/baml/releases/download/unstable%2Fcli%2Fv0.5.0/baml.exe"
             }
         }
     }
