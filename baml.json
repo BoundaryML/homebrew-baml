@@ -1,14 +1,14 @@
 {
-    "version": "0.4.3",
+    "version": "0.4.4",
     "homepage": "https://trygloo.com",
-    "url": "https://github.com/GlooHQ/baml/releases/download/releases%2Fbaml-cli%2Fv0.4.3/baml.exe",
+    "url": "https://github.com/GlooHQ/baml/releases/download/releases%2Fbaml-cli%2Fv0.4.4/baml.exe",
     "bin": "baml.exe",
-    "hash": "77bc2870047caa87cdd9259969ad8a6b325ba493730e04624540ba14949ff4c6",
+    "hash": "801a936d3a42bf9499a2be4ff2ae517421219bf6489f1967fc21592cefead3e7",
     "checkver": "github",
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://github.com/GlooHQ/baml/releases/download/releases%2Fbaml-cli%2Fv0.4.3/baml.exe"
+                "url": "https://github.com/GlooHQ/baml/releases/download/releases%2Fbaml-cli%2Fv0.4.4/baml.exe"
             }
         }
     }
