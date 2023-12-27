@@ -2,15 +2,15 @@
 class BamlNightly < Formula
   desc "BAML Utilities" 
   homepage "https://www.trygloo.com"
-  version "0.6.0-canary.1"
+  version "0.6.0-canary.2"
 
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/GlooHQ/baml/releases/download/unstable%2Fcli%2Fv0.6.0/baml-apple-intel.tar.gz"
-      sha256 "3e895c0b5db0637f659b57ffc2903c4215ac1b742083334543a45e2b7d2b7c69"
+      sha256 "fb134c6e6e731c6463728dbdac34c29d7d15606d4175f6a46715a2c754a16ca6"
     elsif Hardware::CPU.arm?
       url "https://github.com/GlooHQ/baml/releases/download/unstable%2Fcli%2Fv0.6.0/baml-apple-arm.tar.gz"
-      sha256 "82896358944a828367c48175d637331ad1ed214f0766f020b648968e7f150b2e"
+      sha256 "8043a6aaa5d55259272546dd22bce3e43cefd9fd7364285448754982bf4bb399"
     end
   end
 
