@@ -10,7 +10,7 @@ RESET=$(tput sgr0)
 
 # Default settings
 RELEASE_TYPE="releases%2Fbaml-cli%2F" # Default release type
-VERSION="0.6.0"
+VERSION="0.6.1"
 
 # Define checksums for each version (update this list as new versions are released)
 declare -A CHECKSUMS
@@ -26,6 +26,7 @@ CHECKSUMS["0.4.3"]=( "eaee09dcb4a532b319bfeb72a98a8ecb0ec496abfbcf79c68d7a3ea3f6
 CHECKSUMS["0.4.4"]=( "7f713cec336503b5b3c03cd0a0319c49ae8622c1a0e50a93ae6f2bc88e7b51d7" "c8113eedcecaa400199d97d7904eaaf810a3ba66b42ee02ba0fd5c87c442a85e" "a8bd2f9f491008d27010316acbb38f755598c3fd141ba47115ea4733de5a2045" )
 CHECKSUMS["0.5.0"]=( "388a055eeac064ea3a0d781435d3851db548348395ead1b0a5ec0b1d4c2ddf54" "268b0f000e452ab729bdde40e15bf120239c176a038fb0796bd1b444d74fe784" "2b87c6fdeb558ee90df269da0d32e985ee7bb93bcca8bb7c88d0e2585c66270f" )
 CHECKSUMS["0.6.0"]=( "a3c63274298cd1be6ac89e2d7c92b75fd2bc3271b9feab1792546f531cd6b4ba" "7aa59caa2594f566ffdb706b0fc000a0051ef92e6f6d67544c0677d612a6d32b" "f7e60b9a995ba22182428c526231d33eac03b2cdc856dce53cb06fbb7352d00a" )
+CHECKSUMS["0.6.1"]=( "918cb877f08cae722af9fc6e80b1310db7c496eaf8e5b62a9913a116deb989c3" "ab2d4e47f5596d1784f1e75ba39a803fb88032886c81f2b9c13056a46c1fdcfd" "01fdfc558c4d93ad955dd709862f53f62bfa798cd0ccaa7cf9dd6f66c89db7e4" )
 # ADD CHECKSUMS HERE
 
 BINARY_NAME="baml"
@@ -45,6 +46,7 @@ POSSIBLE_VERSIONS=(
 "0.4.4"
 "0.5.0"
 "0.6.0"
+"0.6.1"
 # ADD VERSIONS HERE
 )
 
