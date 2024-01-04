@@ -1,9 +1,9 @@
 {
-    "version": "0.7.0-canary.1",
+    "version": "0.7.0-canary.2",
     "homepage": "https://trygloo.com",
     "url": "https://github.com/GlooHQ/baml/releases/download/unstable%2Fcli%2Fv0.7.0/baml.exe",
     "bin": "baml.exe",
-    "hash": "3394d2dfd975d84d37faa16dab1ad5d188902e081188fd8801ef4da64d779e6c",
+    "hash": "963384640a3cb3e0ab3b64de69e3e9800fd6fbadc5214ad82a8fc75677ab1898",
     "checkver": "github",
     "autoupdate": {
         "architecture": {
