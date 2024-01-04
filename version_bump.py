@@ -22,7 +22,7 @@ class Args:
         if self.nightly:
             return f"https://github.com/GlooHQ/baml/releases/download/unstable%2Fcli%2Fv{self.url_version}"
         else:
-            return f"https://github.com/GlooHQ/baml/releases/download/releases%2Fbaml-cli%2Fv{self.url_version}"
+            return f"https://github.com/GlooHQ/baml/releases/download/release%2Fbaml-cli%2Fv{self.url_version}"
 
 
 

@@ -9,7 +9,7 @@ RED=$(tput setaf 1)
 RESET=$(tput sgr0)
 
 # Default settings
-RELEASE_TYPE="releases%2Fbaml-cli%2F" # Default release type
+RELEASE_TYPE="release%2Fbaml-cli%2F" # Default release type
 VERSION="0.7.0"
 
 # Define checksums for each version (update this list as new versions are released)
