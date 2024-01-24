@@ -47,7 +47,7 @@ def update_install_sh(arguments: Args) -> None:
     path = Path("install-baml.sh")
     content = path.read_text()
     content = re.sub(r'(?<=VERSION=").*?(?=")', arguments.version, content, count=1)
-    content = content.replace("# ADD CHECKSUMS HERE", f"CHECKSUMS[\"{arguments.version}\"]=( \"{arguments.hash_linux}\" \"{arguments.hash_mac_intel}\" \"{arguments.hash_mac_arm}\" )\n# ADD CHECKSUMS HERE", 1)
+    content = content.replace("# ADD CHECKSUMS HERE", f"CHECKSUMS[\"{arguments.version}\"]=\"{arguments.hash_linux} {arguments.hash_mac_intel} {arguments.hash_mac_arm}\" \n# ADD CHECKSUMS HERE", 1)
     content = content.replace("# ADD VERSIONS HERE", f"\"{arguments.version}\"\n# ADD VERSIONS HERE", 1)
     path.write_text(content)
 
