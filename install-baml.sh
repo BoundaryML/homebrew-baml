@@ -159,12 +159,13 @@ FILENAME=$(basename $URL)
 # Download the tar.gz file
 HTTP_STATUS=$(curl -L -w "%{http_code}" -s -o $FILENAME $URL)
 if [ "$HTTP_STATUS" -ne 200 ]; then
-    log_message "Error: Failed to download the file. HTTP Status: $HTTP_STATUS. Please check https://github.com/BoundaryML/baml/releases/tag/$RELEASE_TYPE/cli/v$VERSION exists." $RED
+    log_message "Error: Failed to download the file. HTTP Status: $HTTP_STATUS. Please check $URL exists" $RED
     exit 1
 fi
 
 # Only perform checksum verification for stable releases
 if [ "$RELEASE_TYPE" != "unstable%2Fcli%2F" ]; then
+	
     # Compute SHA-256 checksum
     COMPUTED_CHECKSUM=$(sha256sum $FILENAME | awk '{ print $1 }')
 
