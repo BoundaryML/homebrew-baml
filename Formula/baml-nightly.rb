@@ -7,10 +7,10 @@ class BamlNightly < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/GlooHQ/baml/releases/download/unstable%2Fcli%2Fv0.14.0/baml-apple-intel.tar.gz"
-      sha256 "5423bda1df5b04c5fa310f26601fc5b4f4deb76d4e8d6b57149fea72a50dff68"
+      sha256 "897be9ded072e78d4317d947f8778ebd1ea5c0718e63218187694bc86bc61e42"
     elsif Hardware::CPU.arm?
       url "https://github.com/GlooHQ/baml/releases/download/unstable%2Fcli%2Fv0.14.0/baml-apple-arm.tar.gz"
-      sha256 "6c278abc4f3bdebbf27419539802558092ef03e8bc617d13b32082924fd21bb4"
+      sha256 "fe7e3924e2b5d09e1b802381e184f0218b2ba412a33f7cc88f5fdfba53ea4ec8"
     end
   end
 

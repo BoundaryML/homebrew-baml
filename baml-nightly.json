@@ -3,7 +3,7 @@
     "homepage": "https://trygloo.com",
     "url": "https://github.com/GlooHQ/baml/releases/download/unstable%2Fcli%2Fv0.14.0/baml.exe",
     "bin": "baml.exe",
-    "hash": "67b5fbb99a97e3c3cad85ed70605bd4b6612f0e64fcff0737dc6c2203da4260e",
+    "hash": "9758980313bc1842016ea256eaae41c471bb7c7877cc47f3bf0f1d76a7f30a44",
     "checkver": "github",
     "autoupdate": {
         "architecture": {
