@@ -1,6 +1,6 @@
 {
     "cli": "0.16.0",
-    "py_client": "0.16.0",
+    "py_client": "0.17.0",
     "ts_client": "0.0.5",
     "version": "0.1.1"
 }
