@@ -1,7 +1,6 @@
 #!/bin/bash
 
 set -e
-set -o pipefail
 
 # Define color codes
 GREEN=$(tput setaf 2)
