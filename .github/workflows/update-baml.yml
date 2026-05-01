@@ -1,0 +1,71 @@
+name: Update BAML Formula
+
+on:
+  repository_dispatch:
+    types: [update-baml]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: baml-formula
+  cancel-in-progress: false
+
+jobs:
+  update-baml:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Write dispatch payload
+        env:
+          PAYLOAD: ${{ toJson(github.event.client_payload) }}
+        run: |
+          python3 - <<'PY'
+          import os
+          from pathlib import Path
+
+          Path("payload.json").write_text(os.environ["PAYLOAD"] + "\n")
+          PY
+
+      - name: Update formula
+        run: python3 scripts/update-baml-formula.py payload.json
+
+      - name: Validate formula syntax
+        run: ruby -c Formula/baml.rb
+
+      - name: Commit and push formula update
+        env:
+          VERSION: ${{ github.event.client_payload.version }}
+        run: |
+          set -euo pipefail
+          if git diff --quiet -- Formula/baml.rb; then
+            echo "No formula changes."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add Formula/baml.rb
+          git commit -m "Update baml to ${VERSION}"
+
+          for attempt in 1 2 3; do
+            if git push; then
+              exit 0
+            fi
+            git fetch origin main
+            git rebase origin/main
+            python3 scripts/update-baml-formula.py payload.json
+            git add Formula/baml.rb
+            if git diff --cached --quiet; then
+              echo "Formula already updated after rebase."
+              exit 0
+            fi
+            git commit --amend --no-edit
+          done
+
+          echo "::error::failed to push formula update after retries"
+          exit 1
