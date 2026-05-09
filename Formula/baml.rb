@@ -24,10 +24,12 @@ class Baml < Formula
   end
 
   def install
-    bin.install "baml-cli"
+    bin.install "baml-cli" => "baml"
+    bin.install_symlink "baml" => "baml-cli"
   end
 
   test do
+    assert_match version.to_s, shell_output("#{bin}/baml --version")
     assert_match version.to_s, shell_output("#{bin}/baml-cli --version")
   end
 end
