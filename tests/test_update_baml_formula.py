@@ -60,8 +60,10 @@ class UpdateFormulaTests(unittest.TestCase):
     def test_migrates_stale_legacy_formula(self) -> None:
         result, formula = self.run_update('url "https://github.com/GlooHQ/baml"\nbin.install "baml"\nversion "0.19.0"\n', payload())
         self.assertEqual(result.returncode, 0, result.stderr)
-        self.assertIn('version "0.11.0-alpha.1842"', formula.read_text())
-        self.assertIn('bin.install "baml-cli"', formula.read_text())
+        rendered = formula.read_text()
+        self.assertIn('version "0.11.0-alpha.1842"', rendered)
+        self.assertIn('bin.install "baml-cli" => "baml"', rendered)
+        self.assertIn('bin.install_symlink "baml" => "baml-cli"', rendered)
 
     def test_same_version_unchanged_is_noop(self) -> None:
         first, formula = self.run_update(None, payload())
