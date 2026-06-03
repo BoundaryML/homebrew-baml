@@ -1,23 +1,23 @@
 class Baml < Formula
   desc "BAML language CLI"
   homepage "https://github.com/BoundaryML/baml"
-  version "0.11.0-alpha.4717"
+  version "0.11.0-alpha.4723"
   license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/BoundaryML/baml/releases/download/baml-language-0.11.0-alpha.4717/baml-language-0.11.0-alpha.4717-aarch64-apple-darwin.tar.gz"
-      sha256 "a54c5d2097cde19b1da03ea305071f2e428d3e020c8967a7591ef5e9ac57f357"
+      url "https://github.com/BoundaryML/baml/releases/download/baml-language-0.11.0-alpha.4723/baml-language-0.11.0-alpha.4723-aarch64-apple-darwin.tar.gz"
+      sha256 "f31e583f42ba4ecead3e354eab049f0888a6ec6b32b9577885f7f47b9293adec"
     elsif Hardware::CPU.intel?
-      url "https://github.com/BoundaryML/baml/releases/download/baml-language-0.11.0-alpha.4717/baml-language-0.11.0-alpha.4717-x86_64-apple-darwin.tar.gz"
-      sha256 "af7b68cad97134d013e3844b40cdf4222887b7a07952ce207418bd7b208602ee"
+      url "https://github.com/BoundaryML/baml/releases/download/baml-language-0.11.0-alpha.4723/baml-language-0.11.0-alpha.4723-x86_64-apple-darwin.tar.gz"
+      sha256 "f71c3a2304a9be46854477040b6c3ca6916209fc6cb3415bc3080cb1e7d58639"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/BoundaryML/baml/releases/download/baml-language-0.11.0-alpha.4717/baml-language-0.11.0-alpha.4717-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "8e262a5956e2eb2bf203d165f0d55d17761fb3d57179a34511683edb6aa1c3c0"
+      url "https://github.com/BoundaryML/baml/releases/download/baml-language-0.11.0-alpha.4723/baml-language-0.11.0-alpha.4723-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "4e8a1e0aa0cf8a9c848d2e7dd3dc774b678f8fdcea6c2aba663f9af118a3e47f"
     else
       odie "BAML alpha Homebrew builds currently support Linux x86_64 only"
     end
