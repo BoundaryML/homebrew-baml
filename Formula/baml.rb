@@ -1,35 +1,49 @@
 class Baml < Formula
-  desc "BAML language CLI"
+  desc "BAML wrapper - toolchain manager and launcher"
   homepage "https://github.com/BoundaryML/baml"
-  version "0.11.0-alpha.4780"
+  version "0.1.0"
   license "Apache-2.0"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/BoundaryML/baml/releases/download/baml-language-0.11.0-alpha.4780/baml-language-0.11.0-alpha.4780-aarch64-apple-darwin.tar.gz"
-      sha256 "c9d63c6ef0d087864a6e5ee10ecd2d34413a98e1c119f2baa3f34032a5f9161e"
-    elsif Hardware::CPU.intel?
-      url "https://github.com/BoundaryML/baml/releases/download/baml-language-0.11.0-alpha.4780/baml-language-0.11.0-alpha.4780-x86_64-apple-darwin.tar.gz"
-      sha256 "61bb2d08e1e5da455e3c202c7f1b542bb1cfc59e386e6cb12833f5142b0ad643"
+    on_arm do
+      url "https://github.com/BoundaryML/baml/releases/download/baml-wrapper-0.1.0/baml-wrapper-0.1.0-aarch64-apple-darwin.tar.gz"
+      sha256 "4c793ff1e2ca454bc22bf5ad6ffa6a16898aec82a9fada27d20cad941e6bc951"
+    end
+
+    on_intel do
+      url "https://github.com/BoundaryML/baml/releases/download/baml-wrapper-0.1.0/baml-wrapper-0.1.0-x86_64-apple-darwin.tar.gz"
+      sha256 "31f2cdb6f76a5d190b418d690c3a113a9b9696cb7c401e3532da2bb3981eff10"
     end
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/BoundaryML/baml/releases/download/baml-language-0.11.0-alpha.4780/baml-language-0.11.0-alpha.4780-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "04255efbdbe1777ea1c2169fc8a8b62c394c4203a2970914a0d958dfa5a6bdb2"
-    else
-      odie "BAML alpha Homebrew builds currently support Linux x86_64 only"
+    on_arm do
+      url "https://github.com/BoundaryML/baml/releases/download/baml-wrapper-0.1.0/baml-wrapper-0.1.0-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "cb0166b896cd2ff8b9349cc29fbeb89140a909a96c020dabb8b410615013c29e"
+    end
+
+    on_intel do
+      url "https://github.com/BoundaryML/baml/releases/download/baml-wrapper-0.1.0/baml-wrapper-0.1.0-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "506c0f531ad5d220a503f9135f104b50746d6dd14c6e9419859da94ebb58f14c"
     end
   end
 
   def install
-    bin.install "baml-cli" => "baml"
-    bin.install_symlink "baml" => "baml-cli"
+    bin.install "bin/baml"
   end
 
-  test do
-    assert_match version.to_s, shell_output("#{bin}/baml --version")
-    assert_match version.to_s, shell_output("#{bin}/baml-cli --version")
+  def caveats
+    <<~EOS
+      BAML wrapper installed.
+
+      To install and select the current canary language toolchain:
+        baml toolchain use canary
+
+      To use nightly:
+        baml toolchain use nightly
+
+      IDE extension setup is explicit:
+        baml ide install --cursor
+    EOS
   end
 end
