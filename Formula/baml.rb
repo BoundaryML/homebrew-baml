@@ -29,7 +29,11 @@ class Baml < Formula
   end
 
   def install
-    bin.install "bin/baml"
+    if (buildpath/"bin/baml").exist?
+      bin.install "bin/baml"
+    else
+      bin.install "baml"
+    end
   end
 
   def caveats
