@@ -7,29 +7,33 @@ class Baml < Formula
   on_macos do
     on_arm do
       url "https://github.com/BoundaryML/baml/releases/download/baml-wrapper-0.1.0/baml-wrapper-0.1.0-aarch64-apple-darwin.tar.gz"
-      sha256 "13795e1a366cf77e4a4a42107ba2417f4fd5c3dc46f128b09d36560613889044"
+      sha256 "103971a973643503bcfe3b7dc950427c52b160399f7dc82911195afe6ba8ed01"
     end
 
     on_intel do
       url "https://github.com/BoundaryML/baml/releases/download/baml-wrapper-0.1.0/baml-wrapper-0.1.0-x86_64-apple-darwin.tar.gz"
-      sha256 "3b2436299f7282df77749b2fed64423658a6cc5a541142ce3fa29287e77c2e6e"
+      sha256 "4fea037affe3591aa4dd27773ce81af3324969e9546c7c63d82373de01530d88"
     end
   end
 
   on_linux do
     on_arm do
       url "https://github.com/BoundaryML/baml/releases/download/baml-wrapper-0.1.0/baml-wrapper-0.1.0-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "8e5b1df2b89bcbe766cfef94c4788d054e32ddb28810757aad54d017e14d43b6"
+      sha256 "892dd26d0e2539d93b7190a06747df5191e4f5c50c83d24e99ffbe91307f3c61"
     end
 
     on_intel do
       url "https://github.com/BoundaryML/baml/releases/download/baml-wrapper-0.1.0/baml-wrapper-0.1.0-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "54cb6eeb2e03a6dace612edd0ea0c044c855047ff3d0346aab1b5269d9209f5b"
+      sha256 "ee4c3feacacd1f9426037109fd3aa1b4bbf5842fba624c82eb892329c8c2af87"
     end
   end
 
   def install
-    bin.install "bin/baml"
+    if (buildpath/"bin/baml").exist?
+      bin.install "bin/baml"
+    else
+      bin.install "baml"
+    end
   end
 
   def caveats
