@@ -1,30 +1,30 @@
 class Baml < Formula
   desc "BAML wrapper - toolchain manager and launcher"
   homepage "https://github.com/BoundaryML/baml"
-  version "0.1.0"
+  version "0.2.0"
   license "Apache-2.0"
 
   on_macos do
     on_arm do
-      url "https://github.com/BoundaryML/baml/releases/download/baml-wrapper-0.1.0/baml-wrapper-0.1.0-aarch64-apple-darwin.tar.gz"
-      sha256 "103971a973643503bcfe3b7dc950427c52b160399f7dc82911195afe6ba8ed01"
+      url "https://github.com/BoundaryML/baml/releases/download/baml-wrapper-0.2.0/baml-wrapper-0.2.0-aarch64-apple-darwin.tar.gz"
+      sha256 "e23a6866aaa225f45c2f750db5e615f474e17a6eefa5c1805b23c857b881dea2"
     end
 
     on_intel do
-      url "https://github.com/BoundaryML/baml/releases/download/baml-wrapper-0.1.0/baml-wrapper-0.1.0-x86_64-apple-darwin.tar.gz"
-      sha256 "4fea037affe3591aa4dd27773ce81af3324969e9546c7c63d82373de01530d88"
+      url "https://github.com/BoundaryML/baml/releases/download/baml-wrapper-0.2.0/baml-wrapper-0.2.0-x86_64-apple-darwin.tar.gz"
+      sha256 "0ef33631317cbf52c9936ed3c17888a3f55cab04cd24c1508419317b1dbe3aca"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/BoundaryML/baml/releases/download/baml-wrapper-0.1.0/baml-wrapper-0.1.0-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "892dd26d0e2539d93b7190a06747df5191e4f5c50c83d24e99ffbe91307f3c61"
+      url "https://github.com/BoundaryML/baml/releases/download/baml-wrapper-0.2.0/baml-wrapper-0.2.0-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "f164bc01ec011d7bd60301b2d6d295a51176058aaf2494f64e46403811aaf7aa"
     end
 
     on_intel do
-      url "https://github.com/BoundaryML/baml/releases/download/baml-wrapper-0.1.0/baml-wrapper-0.1.0-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "ee4c3feacacd1f9426037109fd3aa1b4bbf5842fba624c82eb892329c8c2af87"
+      url "https://github.com/BoundaryML/baml/releases/download/baml-wrapper-0.2.0/baml-wrapper-0.2.0-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "4e21a6166cbe4fa7fa165451b9427fc3498b66491a063819628c20438bf41dcd"
     end
   end
 
