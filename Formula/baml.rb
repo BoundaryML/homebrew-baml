@@ -6,24 +6,24 @@ class Baml < Formula
   on_macos do
     on_arm do
       url "https://github.com/BoundaryML/baml/releases/download/baml-wrapper-0.2.2/baml-wrapper-no-self-update-0.2.2-aarch64-apple-darwin.tar.gz"
-      sha256 "900e867c23b6ac75474bbd1f3b70142ab2cabf5a6da07d02a6fa48f320788ce6"
+      sha256 "283c91c674381ece0bf971e9a71db02b5f8787be9154971017ab2f6f246af5c8"
     end
 
     on_intel do
       url "https://github.com/BoundaryML/baml/releases/download/baml-wrapper-0.2.2/baml-wrapper-no-self-update-0.2.2-x86_64-apple-darwin.tar.gz"
-      sha256 "5a6218a97b8ae0280f4b631939598fb7fd7e1cc7585b1a9fc113d2762a14a02f"
+      sha256 "93ddd8aed0abbc45331b94e56de352402a42644a2b41833649c67d1717bd75c8"
     end
   end
 
   on_linux do
     on_arm do
       url "https://github.com/BoundaryML/baml/releases/download/baml-wrapper-0.2.2/baml-wrapper-no-self-update-0.2.2-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "a12a36c82b777a30d0b30ba57c5689f5e6fbba32e5fcab42435a5d93ea10e7ff"
+      sha256 "4e4beb7f047eaae0016a3ebba12538018694e07cde89ea30a8c31cfea550a530"
     end
 
     on_intel do
       url "https://github.com/BoundaryML/baml/releases/download/baml-wrapper-0.2.2/baml-wrapper-no-self-update-0.2.2-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "8b17f31c55c67779d361b342d0b4ac53efb4ebe039a919cb3877072237d27206"
+      sha256 "57227aa619d22d464aa812c9100d95ae6b77c10437320051fd8874518dcf5e4d"
     end
   end
 
